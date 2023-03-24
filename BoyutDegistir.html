@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider{
+            -webkit-appearance: none;
+            width: 300px;
+            height: 15px;
+            border-radius: 7px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+        }
+        .slider:hover{
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgb(59,88,91);
+            cursor:pointer;
+        }
+        .slider::-webkit-range-thumb{
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgb(59,88,91);
+            cursor:pointer;
+        }
+        .box{
+            width: 100px;
+            height: 150px;
+            background-color: darkslategrey;
+            margin-left: 50%;
+            margin-top: -15%;
+        }
+    </style>
+</head>
+<body>
+    <h3>Width</h3><input id="width" type="range" max="500" value="100" oninput="sizee()">
+    <h3>Height</h3><input id="height" type="range" max="500" value="100" oninput="sizee()">
+    <h3>Radius</h3><input id="radius" type="range" max="50" value="10" oninput="sizee()">
+    <div class="box" id="divSize"></div>
+    <script>
+        function sizee(){
+            var width = document.getElementById("width").value;
+            var height = document.getElementById("height").value;
+            var radius = document.getElementById("radius").value;
+            document.getElementById("divSize").style.width = width;
+            document.getElementById("divSize").style.height = height;
+            document.getElementById("divSize").style.borderRadius = radius+ `%`;
+        }
+    </script>
+</body>
+</html>
